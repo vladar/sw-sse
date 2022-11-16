@@ -1,0 +1,19 @@
+{
+  "name": "sw-graphql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@microsoft/fetch-event-source": "^2.0.1"
+  },
+  "devDependencies": {
+    "express": "^4.17.1",
+    "prettier": "^2.7.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

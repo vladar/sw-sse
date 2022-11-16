@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Test</title>
+  </head>
+  <body>
+    <script src="main.js" type="module"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register(`./sw.js`, { scope: "/example/" })
+          .then(function (reg) {
+            console.log("Registration succeeded. Scope is " + reg.scope);
+          })
+          .catch(function (error) {
+            console.log("Registration failed: " + error);
+          });
+      }
+    </script>
+
+    <h1>Service worker with SSE</h1>
+    <p>Open dev tools and inspect network tab</p>
+
+    <div>
+      <textarea id="responses" cols="120" rows="30" readonly></textarea>
+      <br />
+      <button
+        onclick="subscribeSSE('test', document.getElementById('responses'))"
+      >
+        Subscribe
+      </button>
+    </div>
+  </body>
+</html>
